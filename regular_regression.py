@@ -20,6 +20,7 @@ def train_val(rss, locations):
     train_x, val_x, train_y, val_y = train_test_split(rss, locations, test_size=0.2)
     return train_x, val_x, train_y, val_y
 
+
 def train_model(rss, locations):
     
     train_X, val_X, train_Y, val_Y = train_val(rss, locations)
@@ -52,3 +53,47 @@ def train_model(rss, locations):
               batch_size=64,callbacks=[earlyStopping],validation_data=(val_X, val_Y))#tbCallBack,
     
     return model
+
+def train_model2(rss, locations):
+    train_X, val_X, train_Y, val_Y = train_val(rss, locations)
+
+    # parameters
+    num_input = train_X.shape[1]# input layer size
+    
+    # define model
+
+    model = Sequential()
+    model.add(Dense(128, input_dim=992, activation='relu', bias=True))
+    model.add(Dropout(0.5))
+    model.add(Dense(128, activation='relu', bias=True))
+    model.add(Dropout(0.5))
+    model.add(Dense(2, activation='linear', bias=True))
+    model.compile(optimizer='adam', loss='mean_squared_error',metrics=['accuracy'])
+    earlyStopping=keras.callbacks.EarlyStopping(monitor='val_loss', patience=60, verbose=0, mode='auto')
+    model.fit(train_X, train_Y,
+              epochs=100,
+              batch_size=64,callbacks=[earlyStopping],validation_data=(val_X, val_Y))#tbCallBack,
+    
+    return model
+
+def train_model3(rss, locations):
+    train_X, val_X, train_Y, val_Y = train_val(rss, locations)
+    
+    # parameters
+    num_input = train_X.shape[1]# input layer size
+    
+    model = Sequential()
+    model.add(Dense(256, input_dim=992, activation='relu', bias=True))
+    model.add(Dropout(0.5))
+    model.add(Dense(128, activation='relu', bias=True))
+    model.add(Dropout(0.5))
+    model.add(Dense(2, activation='linear', bias=True))
+    model.compile(optimizer='adam', loss='mean_squared_error',metrics=['accuracy'])
+    earlyStopping=keras.callbacks.EarlyStopping(monitor='val_loss', patience=60, verbose=0, mode='auto')
+    model.fit(train_X, train_Y,
+              epochs=100,
+              batch_size=64,callbacks=[earlyStopping],validation_data=(val_X, val_Y))#tbCallBack,
+    
+    return model
+    
+
