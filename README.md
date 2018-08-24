@@ -27,5 +27,12 @@ The two datasets are from the same research team, Tampere University of Technol-
 ## Environment configuration
 tools and frameworks: Python Notebook, Keras, Tensorflow, Matlab
 
+## Code
+code 1_2, 1_3 is for floor classification, 2_1, 2_2, 2_3 for floor regression.
+
+long term file is for dataset 2
+
+Matlab file is the code of WKNN using for the dataset.
+
 For more detail, you can check the report.
 
