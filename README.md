@@ -1,4 +1,3 @@
 # indoor-position
 
-Currently, I don't finish this project.   
-Will document this project soon.
+https://github.com/JonOnEarth/indoor-position/blob/master/indoor_position_1.pdf
