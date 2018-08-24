@@ -24,5 +24,8 @@ There are many Indoor positioning techniques, we are using fingerprint positioni
 [Dataset2](https://zenodo.org/record/1066041)  
 The two datasets are from the same research team, Tampere University of Technol-ogy and Universitat Jaume I. All the data are Wi-Fi database collected in a fullcrowdsourced mode (i.e., different devices, different users and no main indications)
 
+## Environment configuration
+tools and frameworks: Python Notebook, Keras, Tensorflow, Matlab
+
 For more detail, you can check the report.
 
