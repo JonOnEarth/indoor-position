@@ -3,6 +3,7 @@
 Information Processing Lab from Northeastern University
 
 Author: Peng Wu, Ni Ke 
+Instructor: Professor Closas
 
 
 Report: https://github.com/JonOnEarth/indoor-position/blob/master/indoor_position_1.pdf
