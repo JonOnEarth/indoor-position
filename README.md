@@ -2,7 +2,7 @@
 
 Information Processing Lab from Northeastern University
 
-Author: Peng Wu, Ni Ke 
+Author: Peng Wu, Ni Ke   
 Instructor: Professor Closas
 
 
