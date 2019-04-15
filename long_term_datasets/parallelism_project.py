@@ -193,5 +193,4 @@ if __name__ == "__main__":
         test_accuracy = model_regression(data_classify(),args.regularzation_penalty)
         np.savetxt('args.outpt' , test_accuracy, delimiter = ',')
 # positioning_accuracy_t.csv
-
 # classification_accuracy_t.csv
