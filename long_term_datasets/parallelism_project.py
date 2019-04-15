@@ -14,6 +14,7 @@ import sklearn
 # from sklearn.cluster import KMeans
 from sklearn.model_selection import train_test_split
 import time as t
+import argparse
 
 # from keras.layers import Conv1D, Dense, MaxPooling1D, Flatten, Input
 
@@ -174,7 +175,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description = 'Text Analysis through TFIDF computation',formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument('mode', help='Mode of operation',choices=['classification','positioning'])
     parser.add_argument('input', help='Input file or list of files.')
-    parser.add_argument('output', help='File in which output is stored')
+    parser.add_argument('--output', help='File in which output is stored')
+    parser.add_argument('--output1', help='File in which output is stored')
     parser.add_argument('--floor',default=3,type=int,help ="the floor will train")
     parser.add_argument('--regularzation_penalty',default=0.03,type=float,help ="regularzation_penalty")
     # parser.add_argument('--master',default="local[20]",help="Spark Master")
@@ -190,7 +192,7 @@ if __name__ == "__main__":
         np.savetxt('args.output', accuracy_t , delimiter = ',')
 
     if args.mode == "classification":
-        test_accuracy = model_regression(data_classify(),args.regularzation_penalty)
-        np.savetxt('args.outpt' , test_accuracy, delimiter = ',')
+        test_accuracy = model_classification(data_classify(),args.regularzation_penalty)
+        np.savetxt('args.outpt1' , test_accuracy, delimiter = ',')
 # positioning_accuracy_t.csv
 # classification_accuracy_t.csv
